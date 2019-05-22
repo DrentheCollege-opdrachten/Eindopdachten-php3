@@ -4,15 +4,16 @@
     private $max;
     private $belasting;
 
-    public WOZWaarde ($min, $max = PHP_INT_MAX, $belasting) {
+    public function __constructor ($min, $belasting, $max = PHP_INT_MAX) {
       $this->min = $min;
       $this->max = $max;
       $this->Belasting = $belasting;
     }
 
-    public isCorrect ($current) {
-      if ($current >= $this->min && $current <= $this->max) {
-        return $this->Belasting;
+    public function isCorrect ($current) {
+      if ($current > $this->min && $current <= $this->max) {
+        echo $this->belasting;
+        return $this->$belasting;
       } else {
         return -1;
       }

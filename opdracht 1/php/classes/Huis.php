@@ -1,5 +1,13 @@
 <?php
-class Huis extends Belasting {
+include "belasting.php";
+include "WOZwaarde.php";
+
+$huis = new Huis("piet", 4, "");
+
+
+$huis->fillBelasting();
+$huis->berekenBelasting();
+class Huis {
 
     private $kamers; // integer
     private $toiletten; // integer
@@ -10,15 +18,40 @@ class Huis extends Belasting {
     private $plaatsnaam; // String
     private $oppervlakte; // integer
     private $wozWaarde; // integer
-
-    function House ($straatnaam, $huisnummer, $plaats) {
+    private $belasting; // WOZWaarde []
+    private $belast; // integer
+    public function __constructor ($straatnaam, $huisnummer, $plaats) {
       $this->straatnaam = $straatnaam;
       $this->huisnummer = $huisnummer;
       $this->plaatsnaam = $plaats;
+      $this->wozWaarde = 150000;
+
+      fillBelasting();
+      berekenBelasting();
+    }
+
+    public function fillBelasting() {
+      // new WOZWaarde(min, belasting, max)
+      $belasting[0] = new WOZWaarde(PHP_INT_MIN, 600, 100000);
+      $belasting[1] = new WOZWaarde(100000, 600, 200000);
+      $belasting[2] = new WOZWaarde(200000, 6000);
     }
 
 
-    function berekenBelasting();
+    public function berekenBelasting() {
+      $klaar = false;
+      $i = 0;
+      while ($i < 3) {
+        $belast = $belasting[$i]->isCorrect($this->wozWaarde);
+        if ($belast != -1) {
+          $klaar = true;
+        }
+
+        $i++;
+      }
+      echo $belast;
+
+    }
 
 
 

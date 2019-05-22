@@ -1,6 +1,14 @@
 .jumbotron {
-  position: absolute;
-  top: 25px;
   padding: 25px;
   background-color: rgb(200, 200, 200) !important;
+  border-radius: 20px;
+}
+
+button {
+  margin: 10px;
+  padding:4px 6px 4px 6px;
+}
+
+input {
+  border-radius: 0px;
 }
