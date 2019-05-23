@@ -1,4 +1,5 @@
 .jumbotron {
+  max-width: 25%;
   padding: 25px;
   background-color: rgb(200, 200, 200) !important;
   border-radius: 20px;
