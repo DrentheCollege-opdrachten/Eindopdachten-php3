@@ -4,16 +4,15 @@
     private $max;
     private $belasting;
 
-    public function __constructor ($min, $belasting, $max = PHP_INT_MAX) {
+    public function __construct ($min, $belasting, $max) {
       $this->min = $min;
       $this->max = $max;
-      $this->Belasting = $belasting;
+      $this->belasting = $belasting;
     }
 
     public function isCorrect ($current) {
       if ($current > $this->min && $current <= $this->max) {
-        echo $this->belasting;
-        return $this->$belasting;
+        return $this->belasting;
       } else {
         return -1;
       }

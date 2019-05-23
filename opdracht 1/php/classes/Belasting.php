@@ -1,13 +1,17 @@
 <?php
-include 'WOZWaarde.php';
-  class Belasting extends WOZWaarde{
+  include_once "WOZWaarde.php";
+
+  class Belasting {
+
     public function berekenBelasting($wozWaarde, $kamers, $stad, $wozWaardes) {
       $i = 0;
-      while ($i < sizeof($wozwaardes)) {
-        $waarde = $wozWaardes->isCorrect($wozWaarde);
+      $waarde = 0;
+      while ($i < 3) {
+        $waarde = $wozWaardes[$i]->isCorrect($wozWaarde);
         if ($waarde > -1) {
           break;
         }
+        $i++;
       }
 
       switch ($kamers) {
@@ -27,9 +31,8 @@ include 'WOZWaarde.php';
       if ($stad == $plek) {
         $waarde += 1000;
       }
+      return $waarde;
     }
-      // code...
-
 
 
     }

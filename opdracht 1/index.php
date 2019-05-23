@@ -1,3 +1,6 @@
+<?php
+  include "php/classes/Huis.php";
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -11,10 +14,10 @@
   <body>
     <div class="wrapper container-fluid">
       <div class="input jumbotron col-md-4 col-sm-11">
-        <form class="input_huis" action="index.html" method="post">
-          <span class="in_span  " id="kamers">Aantal kamers: </span> <input type="number" name="kamers" class="in_int  form-control col-12" id="kamers" placeholder="2"><br>
-          <span class="in_span  " id="toiletten"> Aantal toiletten: </span> <input type="number" name="toiletten" class="in_int  form-control col-12" id="toilet" placeholder="1"><br>
-          <span class="in_span  " id="verwarming"> Verwarming: </span>
+        <form class="input_huis" action="index.php" method="post">
+          <span class="in_span" id="kamers">Aantal kamers: </span> <input type="number" name="kamers" class="in_int  form-control col-12" id="kamers" placeholder="2"><br>
+          <span class="in_span" id="toiletten"> Aantal toiletten: </span> <input type="number" name="toiletten" class="in_int  form-control col-12" id="toilet" placeholder="1"><br>
+          <span class="in_span" id="verwarming"> Verwarming: </span>
           <!-- dropdown menu's -->
             <!-- wel of geen verwarming -->
           <select class="dropdown form-control col-12" id="verwarming_bool" name="verwarming_bool">
@@ -40,6 +43,21 @@
         </form>
       </div>
       <!-- output -->
+      <div class="output">
+        <?php
+        if (isset($_POST["straat"])) {
+          // code...
+          $huis = new Huis($_POST["straat"], $_POST["huisnummer"], $_POST["plaats"]);
+          $huis->setKamers($_POST["kamers"]);
+          $huis->setWozWaarde($_POST["woz"]);
+          $huis->setToiletten($_POST["toiletten"])
+          $huis->setVerwarming($_POST["verwarming_bool"])
+          $huis->setTypeVerwarming($_post[""])
+          // $huis->set
+          $huis->show();
+        }
+        ?>
+      </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
