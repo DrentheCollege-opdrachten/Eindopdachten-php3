@@ -26,11 +26,11 @@ class Huis {
       $this->plaatsnaam = $plaats;
       $this->wozWaarde = 150000;
 
-      fillBelasting();
+      fillWoz();
       berekenBelasting();
     }
 
-    public function fillBelasting() {
+    public function fillWoz() {
       // new WOZWaarde(min, belasting, max)
       $belasting[0] = new WOZWaarde(PHP_INT_MIN, 600, 100000);
       $belasting[1] = new WOZWaarde(100000, 600, 200000);
@@ -39,18 +39,8 @@ class Huis {
 
 
     public function berekenBelasting() {
-      $klaar = false;
-      $i = 0;
-      while ($i < 3) {
-        $belast = $belasting[$i]->isCorrect($this->wozWaarde);
-        if ($belast != -1) {
-          $klaar = true;
-        }
-
-        $i++;
-      }
-      echo $belast;
-
+      $belast = new Belasting();
+      $belast->berekenBelasting($wozWaarde, $kamers, $plaatsnaam,$wozWaardes);
     }
 
 

@@ -1,19 +1,36 @@
 <?php
 include 'WOZWaarde.php';
-  class Belasting {
-    protected function berekenBelasting($wozWaarde, $kamers, $straat) {
-      $belasting = 0;
-      if ($wozWaarde < 100000) {
-        $belasting += 600;
-      } else if ($wozWaarde < 200000){
-        $belasting += 2000;
-      } else {
-        $belasting += 6000;
+  class Belasting extends WOZWaarde{
+    public function berekenBelasting($wozWaarde, $kamers, $stad, $wozWaardes) {
+      $i = 0;
+      while ($i < sizeof($wozwaardes)) {
+        $waarde = $wozWaardes->isCorrect($wozWaarde);
+        if ($waarde > -1) {
+          break;
+        }
       }
 
+      switch ($kamers) {
+        case 1:
+          $waarde += 100;
+          break;
+        case 2:
+          $waarde += 300;
+          break;
+        default:
+          $waarde += 800;
+          break;
+      }
+      $steden = array('amsterdam', 'rotterdam', 'groningen');
+      $stad = strtolower($stad);
+    foreach ($steden as $plek) {}
+      if ($stad == $plek) {
+        $waarde += 1000;
+      }
+    }
+      // code...
 
 
 
     }
-  }
  ?>
