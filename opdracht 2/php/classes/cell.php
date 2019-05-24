@@ -1,0 +1,18 @@
+<?php
+
+class cell {
+  private $id;
+  private $numb;
+  function __construct ($id, $numb) {
+    $this->id = $id;
+    $this->numb = $numb;
+  }
+
+  public function show {
+    echo "<td class=\"cell $this->numb\"id= \"$this->id\"> ? </td>";
+  }
+
+}
+
+
+ ?>

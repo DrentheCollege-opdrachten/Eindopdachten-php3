@@ -1,3 +1,6 @@
+<?php
+  include_once "./php/classes/screen.php"
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -6,5 +9,10 @@
     <title>eindopdracht 2 | php 3</title>
   </head>
   <body>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="./js/app.js" charset="utf-8"></script>
   </body>
 </html>
