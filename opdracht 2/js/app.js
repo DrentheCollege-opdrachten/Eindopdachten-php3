@@ -2,17 +2,17 @@ let cells = [null, null];
 //variables used for testing
 let delay = 1; // time delay in seconds
 
-$(document).ready(function() {
-  $('.cell').onclick(() => {
+$(document).ready(() => {
+  $('.cell').click(() => {
     if (cells[0] !== null) {
-      cells[0] = $(this).attr('id')[1];
+      cells[1] = $(this).attr('id');
+      console.log(cells[1]);
     } else {
-      cells[1] = $(this).attr('id')[1];
+      cells[0] = $(this).attr('id');
+      console.log(cells[0]);
     }
-
-    if (cells[1] != null) {
-      checkCorrect();
-    }
+    console.log($(this).attr('id'))
+    console.log(cells);
   });
 
 });
@@ -26,7 +26,10 @@ function checkCorrect (arr) {
     } else {
       wrong();
     }
-  } delay * 1000);
+  }, delay * 1000);
 }
+function wrong () {}
 
-function hideNumber ()
+function hideNumber () {
+
+}
