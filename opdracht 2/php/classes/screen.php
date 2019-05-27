@@ -1,21 +1,20 @@
 <?php
-include_once ="cells.php";
+include_once "cell.php";
+
 
 class Screen {
   private $cells;
   private $helpArray;
   function __construct () {
-    $cells = new SplFixedArray(24);
-    $helpArray = (1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8)
-    fillArray($cells, $helpArray);
+    $this->cells = new SplFixedArray(16);
+    $this->helpArray = array (1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8);
+    $this->fillArray($this->cells, $this->helpArray);
   }
 
   private function fillArray ($arr1, $arr2) {
-    for ($i=0; $i < sizeof($arr); $i++) {
-      $int = getSemiRandomInt($arr2);
-      if ($int != -1) {
-        $arr[] = new Cell($i, $int);
-      }
+    for ($i=0; $i < sizeof($arr1); $i++) {
+      $int = $this->getSemiRandomInt($arr2);
+        $this->cells[$i] = new Cell($i, $int);
     }
   }
 
@@ -25,10 +24,19 @@ class Screen {
     $int = $arr[$random];
     array_splice($arr, $random, $random);
 
-    return $int
+    return $int;
   }
 
-  public function show () {}
+  public function show () {
+    $g = 0;
+    for ($i=0; $i < 4; $i++) {
+      echo "<tr id=\"row$i\">\n";
+      for ($j=0; $j < 4; $j++) {
+        $this->cells[$g++]->show();
+      }
+      echo "</tr><br>\n";
+    }
+  }
 }
 
  ?>
