@@ -1,9 +1,12 @@
+html {
+  font-size: 25px;
+}
 table {
   border-collapse: collapse;
   position: absolute;
   left: 50%;
   margin-left: -250px;
-  top: 10%;
+  top: 125px;
   border-radius: 10%;
 }
 
@@ -13,4 +16,19 @@ table {
   width: 100px;
   text-align: center;
   vertical-align: middle;
+}
+
+.playerscores {
+  position: absolute;
+  left: 50%;
+  margin-left: -125px;
+}
+.playerscores, div{
+  align-content: center;
+  padding: 5px;
+  width: 175px;
+}
+
+#player1 {
+  background-color: #29ffcd;
 }
