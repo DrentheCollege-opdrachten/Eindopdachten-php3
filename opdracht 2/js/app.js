@@ -2,20 +2,21 @@ let cells = [null, null];
 //variables used for testing
 let delay = 1; // time delay in seconds
 
-$(document).ready(() => {
-  $('.cell').click(() => {
+function clicked (cell) {
     if (cells[0] !== null) {
-      cells[1] = $(this).attr('id');
-      console.log(cells[1]);
+      cells[1] = cell;
     } else {
-      cells[0] = $(this).attr('id');
-      console.log(cells[0]);
+      cells[0] = cell;
     }
-    console.log($(this).attr('id'))
+    showCells();
     console.log(cells);
-  });
+}
 
-});
+function checkCells () {
+  for (var i = 0; i < cells.length; i++) {
+    cells[i].text($(this).attr('id'));
+  }
+}
 
 function checkCorrect (arr) {
   cell1 = $('#' + cells[0]).attr('class')[1];
@@ -31,5 +32,7 @@ function checkCorrect (arr) {
 function wrong () {}
 
 function hideNumber () {
-
+  for (var i = 0; i < cells.length; i++) {
+    cells[i].text('?');
+  }
 }
