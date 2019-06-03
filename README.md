@@ -9,5 +9,5 @@ In deze repository kun je de code van de eindopdrachten van php 3 vinden:
 
 # Wat heb ik geleerd?
 Ik heb de volgende dingen geleerd:
-  * Hoe je een klasse moet maken.
-  * Hoe je een _autoload functie moet maken.
+  * Hoe je een klasse moet maken en gebruiken
+  * Hoe je een _autoload functie moet maken en gebruiken
