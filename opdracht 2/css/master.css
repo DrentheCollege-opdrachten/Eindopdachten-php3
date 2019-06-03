@@ -11,7 +11,7 @@ table {
 }
 
 .cell {
-  border: 5px solid rgba(51, 57, 64, 0.8);
+  border: 5px solid rgb(51, 57, 64);
   height: 100px;
   width: 100px;
   text-align: center;
