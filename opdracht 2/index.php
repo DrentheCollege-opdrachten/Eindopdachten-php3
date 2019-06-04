@@ -24,39 +24,19 @@
 
       <table>
         <?php
-        // try {
-        //   $screen = new Screen();
-        //   $screen->show();
-        // } catch (\Exception $e) { echo $e;}
+        try {
+          $screen = new Screen();
+          $screen->show();
+        } catch (\Exception $e) { echo $e;}
 
         ?>
-          <tbody>
-            <tr id="row0">
-              <td class="cell 1" id="0" onclick="clicked($(this))"> ? </td>
-              <td class="cell 1" id="1" onclick="clicked($(this))"> ? </td>
-              <td class="cell 2" id="2" onclick="clicked($(this))"> ? </td>
-              <td class="cell 2" id="3" onclick="clicked($(this))"> ? </td>
-            </tr>
-            <tr id="row1">
-              <td class="cell 3" id="4" onclick="clicked($(this))"> ? </td>
-              <td class="cell 3" id="5" onclick="clicked($(this))"> ? </td>
-              <td class="cell 4" id="6" onclick="clicked($(this))"> ? </td>
-              <td class="cell 4" id="7" onclick="clicked($(this))"> ? </td>
-            </tr>
-            <tr id="row2">
-              <td class="cell 5" id="8" onclick="clicked($(this))"> ? </td>
-              <td class="cell 5" id="9" onclick="clicked($(this))"> ? </td>
-              <td class="cell 6" id="10" onclick="clicked($(this))"> ? </td>
-              <td class="cell 6" id="11" onclick="clicked($(this))"> ? </td>
-            </tr>
-            <tr id="row3">
-              <td class="cell 7" id="12" onclick="clicked($(this))"> ? </td>
-              <td class="cell 7" id="13" onclick="clicked($(this))"> ? </td>
-              <td class="cell 8" id="14" onclick="clicked($(this))"> ? </td>
-              <td class="cell 8" id="15" onclick="clicked($(this))"> ? </td>
-            </tr>
-        </tbody>
       </table>
+
+      <div class="reset_div">
+        <form action="index.php" method="post">
+            <button id="reset" type="submit" name="button">Click me to reset the fields!</button>
+        </form>
+      </div>
     </div>
 
     <script src="./js/app.js" charset="utf-8"></script>

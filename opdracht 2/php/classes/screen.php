@@ -8,23 +8,14 @@ class Screen {
   function __construct () {
     $this->cells = new SplFixedArray(16);
     $this->helpArray = array (1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8);
+    shuffle($this->helpArray);
     $this->fillArray($this->cells, $this->helpArray);
   }
 
   private function fillArray ($arr1, $arr2) {
     for ($i=0; $i < sizeof($arr1); $i++) {
-      $int = $this->getSemiRandomInt($arr2);
-        $this->cells[$i] = new Cell($i, $int);
+        $this->cells[$i] = new Cell($i, $arr2[$i]);
     }
-  }
-
-  private function getSemiRandomInt ($arr) {
-    $int = -1;
-    $random = rand(0, sizeof($arr));
-    $int = $arr[$random];
-    array_splice($arr, $random, $random);
-
-    return $int;
   }
 
   public function show () {
@@ -34,7 +25,7 @@ class Screen {
       for ($j=0; $j < 4; $j++) {
         $this->cells[$g++]->show();
       }
-      echo "</tr><br>\n";
+      echo "</tr>\n";
     }
   }
 }
