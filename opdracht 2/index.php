@@ -23,13 +23,14 @@
       </div>
 
       <table>
+        <!-- the code to show all the cells -->
         <?php
         try {
           $screen = new Screen();
           $screen->show();
         } catch (\Exception $e) { echo $e;}
-
         ?>
+
       </table>
 
       <div class="reset_div">

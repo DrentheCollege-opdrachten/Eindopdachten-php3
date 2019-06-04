@@ -11,13 +11,13 @@ class Screen {
     shuffle($this->helpArray);
     $this->fillArray($this->cells, $this->helpArray);
   }
-
+//function to fill the array of cells
   private function fillArray ($arr1, $arr2) {
     for ($i=0; $i < sizeof($arr1); $i++) {
         $this->cells[$i] = new Cell($i, $arr2[$i]);
     }
   }
-
+// function to show the cells
   public function show () {
     $g = 0;
     for ($i=0; $i < 4; $i++) {
