@@ -1,34 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic|Roboto|Rubik&display=swap');
+
 html {
+  font-family: 'Rubik' ,'Roboto', 'Namun Gothic', sans-serif;
   font-size: 25px;
+  background-color: rgb(34,34,34);
+  color: #ebe9e7;
 }
+/* STYLING FOR THE TABLE */
 table {
-  border-collapse: collapse;
+  border-collapse: seperate;
+  border-spacing: 5px;
   position: absolute;
   left: 50%;
   margin-left: -250px;
-  top: 125px;
-  border-radius: 10%;
+  top: 105px;
 }
 
 .cell {
-  border: 5px solid rgb(51, 57, 64);
+  font-size: 75px;
+  border: 5px solid rgb(71, 77, 84, 0.8);
   height: 100px;
   width: 100px;
   text-align: center;
   vertical-align: middle;
 }
+.cell:hover {
+  background-color: rgba(255,255,255,0.3);
+}
 
+/* STYLING FOR THE SCORE */
 .playerscores {
   position: absolute;
   left: 50%;
-  margin-left: -125px;
+  margin: 5px;
+  margin-left: -115px;
 }
+
 .playerscores, div{
   align-content: center;
-  padding: 5px;
+  border-radius: 5px;
+  font-size: 22px;
+  padding: 7.5px;
+  top: 5px;
   width: 175px;
 }
 
 #player1 {
-  background-color: #29ffcd;
+  background-color: #144a80;
+}
+
+/* STYLING FOR THE RESET BUTTON */
+.reset_div {
+   position: absolute;
+   width: 210px;
+   margin-left: -125px;
+   left: 50%;
+   top: 600px;
+}
+
+#reset {
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 25px;
+  background-color: #144a80;
+  border: 2px solid rgb(34,34,34);
+  color: #ebe9e7;
+}
+
+#reset:hover {
+  background-color: #3ea8ff;
+  border-color: #144a80;
+  color: rgb(34, 34, 34)
+
 }
