@@ -1,5 +1,5 @@
 # Eindopdrachten PHP 3
-Dit is de github repository voor de eindopdrachten van PHP level 3: classes.
+Dit is de github repository voor de eindopdrachten van PHP level 3: klasses.
 
 ## Wat kun je vinden.
 In deze repository kun je de code van de eindopdrachten van php 3 vinden:
